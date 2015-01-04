@@ -319,14 +319,13 @@ $("#loginBtn").on("click",function(){
 		alert("İstifadəçinin mail adrəsini daxil edin!");
 		return false;
 	}
+	alert(mail)
 	$.ajax({
         type: "POST",
-        data:{username: 'sa@sa.az', password: '111111'},
-        url: "http://localhost:8080/professionalsWebServices/checkUser.json",
-        contentType: "application/json; charset=utf-8",
-        dataType: "json",
-        success: function(){ 
-			alert('success!');
+        data:{username: mail, password: password},
+        url: "http://professionals.az/professionalsWebServices/checkUser.json",
+        success: function(response){ 
+			alert(JSON.stringify(response));
 			},
 		error: function(){
 			alert('error!');
