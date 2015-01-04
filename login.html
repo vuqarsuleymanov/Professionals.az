@@ -305,7 +305,81 @@ $(".previous").click(function(){
 	});
 });
 
+$("#loginBtn").on("click",function(){
+	
+	var mail = $.trim($("#emailLogin").val());
+	var password = $.trim($("#passwordLogin").val());
+	if(mail === '')
+	{
+		alert("İstifadəçi adını daxil edin!");
+		return false;
+    }
+	if(password === '')
+	{
+		alert("İstifadəçinin mail adrəsini daxil edin!");
+		return false;
+	}
+	$.ajax({
+		type:"POST",
+		contentType: "application/json; charset=utf-8",
+        dataType: "json",
+		url:"http://localhost:8080/professionalsWebServices/checkUser.json",
+		data: {username:mail,password:password},
+		success: function (response) {
+              alert("success");
+				
+        },
+		error:function(response){
+		
+		alert(JSON.stringify(response));
+		}
+		
+	});
 
+
+});
+$("#registerBtn").on("click",function(){
+	
+	var name = $.trim($("#nameRegister").val());
+	var surname = $.trim($("#surnameRegister").val());
+	var mail = $.trim($("#mailRegister").val());
+	var password = $.trim($("#passwordRegister").val());
+	if(name === '')
+	{
+		alert("İstifadəçi adını daxil edin!");
+		return false;
+    }
+	if(surname === '')
+	{
+		alert("İstifadəçinin soyadını daxil edin!");
+		return false;
+	}
+	if(mail === '')
+	{
+		alert("İstifadəçinin mail adrəsini daxil edin!");
+		return false;
+	}
+	if(password === '')
+	{
+		alert("İstifadəçi parolu daxil edin!");
+		return false;
+	}
+	$.ajax({
+		type:"POST",
+		url:"http://localhost:8080/professionalsWebServices/checkUser.json",
+		data: {username:mail,password:password,name:name,surname:surname},
+		success: function (response) {
+				
+        },
+		error:function(response){
+		
+		alert(response);
+		}
+		
+	});
+
+
+});
 
 
 });
@@ -325,22 +399,22 @@ $(".previous").click(function(){
 	<!-- fieldsets -->
 	<fieldset>
 		<h2 class="fs-title">Log In</h2>
-		<input type="text" name="email" placeholder="Email" />
-		<input type="password" name="pass" placeholder="Password" />
-		<input type="button" name="next" class="action-button" value="Log In" />
-		<input type="button" class="register action-button" value="Register"/>
+		<input type="text" id="emailLogin" name="email" placeholder="Email" />
+		<input type="password" id="passwordLogin" name="pass" placeholder="Password" />
+		<input type="button" id="loginBtn" name="next" class="action-button" value="Log In" />
+		<input type="button"  class="register action-button" value="Register"/>
 		<br/>
 		<input style="cursor: pointer" type="button" class="forgot" value="Forgot Password?"/>
 
 	</fieldset>
 	<fieldset>
 		<h2 class="fs-title">Create New Account</h2>
-		<input type="text" name="twitter" placeholder="Name" />
-		<input type="text" name="facebook" placeholder="Surname" />
-		<input type="text" name="gplus" placeholder="Email" />
-		<input type="password" name="gplus" placeholder="Password" />
+		<input type="text" id="nameRegister" name="twitter" placeholder="Name" />
+		<input type="text" id="surnameRegister" name="facebook" placeholder="Surname" />
+		<input type="text" id="emailRegister" name="gplus" placeholder="Email" />
+		<input type="password" id="passwordRegister" name="gplus" placeholder="Password" />
 		<input type="button" name="previous" class="previous action-button" value="Log In" />
-		<input type="button" name="next" class="action-button" value="Register" />
+		<input type="button" id="registerBtn" name="next" class="action-button" value="Register" />
 	</fieldset>
 	<fieldset>
 		<h2 class="fs-title">Forgot Password</h2>
