@@ -320,22 +320,19 @@ $("#loginBtn").on("click",function(){
 		return false;
 	}
 	$.ajax({
-		type:"POST",
-		contentType: "application/json; charset=utf-8",
+        type: "POST",
+        data:{username: 'sa@sa.az', password: '111111'},
+        url: "http://localhost:8080/professionalsWebServices/checkUser.json",
+        contentType: "application/json; charset=utf-8",
         dataType: "json",
-		url:"http://localhost:8080/professionalsWebServices/checkUser.json",
-		data: {username:mail,password:password},
-		success: function (response) {
-              alert("success");
-				
-        },
-		error:function(response){
-		
-		alert(JSON.stringify(response));
-		}
-		
-	});
-
+        success: function(){ 
+			alert('success!');
+			},
+		error: function(){
+			alert('error!');
+			}
+			
+			});	 
 
 });
 $("#registerBtn").on("click",function(){
