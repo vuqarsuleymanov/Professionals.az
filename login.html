@@ -374,14 +374,15 @@
                     }
                     $.ajax({
                         type: "POST",
-                        url: "http://localhost:8080/professionalsWebServices/checkUser.json",
+                        url: "http://localhost:8080/professionalsWebServices/register.json",
                         data: {username: mail, password: password, name: name, surname: surname},
                         success: function(response) {
-
+                                alert(response.success);
+                                window.location.reload();
                         },
                         error: function(response) {
 
-                            alert(response);
+                            alert("error!!!");
                         }
 
                     });
