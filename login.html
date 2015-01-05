@@ -155,9 +155,10 @@
              */
 
             $(document).ready(function() {
-                if (localStorage.getItem("userId") !== '')
+				
+                if (localStorage.getItem("userId") !== null)
                 {
-                    window.location.href = "www.google.com"
+                    window.location.href = "home.html"
                 }
 
                 var current_fs, next_fs, previous_fs; //fieldsets
@@ -330,13 +331,13 @@
                         type: "POST",
                         data: {username: mail, password: password},
                         url: "http://localhost:8080/professionalsWebServices/checkUser.json",
-                        contentType: "application/json; charset=utf-8",
-                        dataType: "json",
                         success: function(response) {
                             var val = response.type;
-                            alert("val: " + val);
-
+                            
+							if(val){
                             window.localStorage.setItem("userId", val);
+                            window.location.href = "home.html"
+                            }
                         },
                         error: function() {
                             alert('error!');
