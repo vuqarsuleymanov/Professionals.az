@@ -330,7 +330,7 @@
                     $.ajax({
                         type: "POST",
                         data: {username: mail, password: password},
-                        url: "http://professionals.az/professionalsWebServices/checkUser.json",
+                        url: "http://localhost:8080/professionalsWebServices/checkUser.json",
                         success: function(response) {
                             var val = response.type;
                             
@@ -374,7 +374,7 @@
                     }
                     $.ajax({
                         type: "POST",
-                        url: "http://professionals.az/professionalsWebServices/register.json",
+                        url: "http://localhost:8080/professionalsWebServices/register.json",
                         data: {username: mail, password: password, name: name, surname: surname},
                         success: function(response) {
                                 alert(response.success);
