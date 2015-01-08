@@ -17,13 +17,12 @@
 <title>Epsilon Mobile Framework - Version 2.0</title>
 
 <link href="styles/style.css"     		rel="stylesheet" type="text/css">
-<link href="styles/colors/default.css"   rel="stylesheet" type="text/css">
+<link href="styles/colors/default.css"   rel="stylesheet" type="text/css" id="pagestyle">
 <link href="styles/framework.css" 		rel="stylesheet" type="text/css">
 <link href="styles/owl.carousel.css" 	 rel="stylesheet" type="text/css">
 <link href="styles/owl.theme.css" 		rel="stylesheet" type="text/css">
 <link href="styles/swipebox.css"		 rel="stylesheet" type="text/css">
 <link href="styles/colorbox.css"		 rel="stylesheet" type="text/css">
-<link href="css/font-awesome.css"		 rel="stylesheet" type="text/css">
 
 <script type="text/javascript" src="scripts/jquery.js"></script>
 <script type="text/javascript" src="scripts/jqueryui.js"></script>
@@ -35,51 +34,15 @@
 <script type="text/javascript" src="scripts/custom.js"></script>
 <script type="text/javascript" src="scripts/framework.js"></script>
 <script type="text/javascript" src="scripts/framework.launcher.js"></script>
-<script type="text/javascript" src="scripts/jquery.min.js"></script>
-<script type="text/javascript" src="scripts/jquery.autosize.js"></script>
-<script>
-	$(document).ready(function(){
-		$('textarea').autosize();
-	});
+
+<script type="text/javascript">
+function swapStyleSheet(sheet){
+	document.getElementById('pagestyle').setAttribute('href', sheet);
+}
 </script>
 
-<style>
-	body {
-    background-image: url("images/bg.png");
-	}
-	img.floatLeft { 
-    float: left; 
-    margin: 4px; 
-}
-img.floatRight { 
-    float: right; 
-    margin: 4px; 
-}
-
-input[type=text], textarea {
-  -webkit-transition: all 0.30s ease-in-out;
-  -moz-transition: all 0.30s ease-in-out;
-  -ms-transition: all 0.30s ease-in-out;
-  -o-transition: all 0.30s ease-in-out;
-  outline: none;
-  padding: 3px 5px 3px 3px;
-  margin: 5px 1px 3px 0px;
-  border: 1px solid #DDDDDD;
-  border-radius: 5px;
-  width: 100%
-}
- 
-input[type=text]:focus, textarea:focus {
-  box-shadow: 0 0 5px rgba(81, 203, 238, 1);
-  padding: 3px 0px 3px 3px;
-  margin: 5px 1px 3px 0px;
-  border: 1px solid rgba(81, 203, 238, 1);
-}
-</style>
-
-
 </head>
-<body >
+<body>
 
 <div id="preloader">
 	<div id="status">
@@ -101,19 +64,36 @@ input[type=text]:focus, textarea:focus {
                 </div>
                 <div class="sidebar-decoration"></div>         
             	<a href="#" class="sidebar-logo"></a>              
-                <div class="sidebar-decoration"></div>
+                <div class="sidebar-decoration"></div>                   
                 
-                <div class="sidebar-navigation">          
+                <div class="sidebar-navigation">     
+            
                     <div class="nav-item">
-                        <a href="index-2.html" class="nav-regular">Homepage</a>
+                        <a href="#" class="dropdown-nav">Sidebar Styles</a>
+                        <div class="nav-item-submenu">
+                            <a href="#" onclick="swapStyleSheet('styles/colors/imagetwo.css')">Image Two</a>
+                            <a href="#" onclick="swapStyleSheet('styles/colors/imagethree.css')">Image Three</a>
+                            <a href="#" onclick="swapStyleSheet('styles/colors/imagefour.css')">Image Four</a>
+                            <a href="#" onclick="swapStyleSheet('styles/colors/imagefive.css')">Image Five</a>
+                            <a href="#" onclick="swapStyleSheet('styles/colors/blue.css')">Solid Blue</a>
+                            <a href="#" onclick="swapStyleSheet('styles/colors/green.css')">Solid Green</a>
+                            <a href="#" onclick="swapStyleSheet('styles/colors/orange.css')">Solid Orange</a>
+                            <a href="#" onclick="swapStyleSheet('styles/colors/red.css')">Solid Red</a>
+                            <a href="#" onclick="swapStyleSheet('styles/colors/black.css')">Solid Dark</a>
+                            <a href="#" onclick="swapStyleSheet('styles/colors/default.css')">Default Image</a>
+                        </div>
+                    </div>
+                     
+                    <div class="nav-item">
+                        <a href="index-2.html" class="active-nav">Homepage</a>
                     </div>
                     
                     <div class="nav-item">
-                        <a href="#" class="dropdown-nav dropdown-nav-inactive">Features</a>
-                        <div class="nav-item-submenu active-submenu">
+                        <a href="#" class="dropdown-nav">Features</a>
+                        <div class="nav-item-submenu">
                             <a href="intro.html">Introduction</a>
                             <a href="type.html">Typography</a>
-                            <a class="active-subnav" href="jquery.html">jQuery</a>
+                            <a href="jquery.html">jQuery</a>
                         </div>
                     </div>
                     
@@ -135,7 +115,7 @@ input[type=text]:focus, textarea:focus {
     
                     <div class="nav-item">
                         <a href="#" class="nav-regular close-sidebar">Close</a>
-                    </div>
+                    </div>                    
                 </div>
                 
                 <div class="sidebar-decoration"></div>
@@ -175,7 +155,7 @@ input[type=text]:focus, textarea:focus {
     
         <div class="content-controls">
         	<a href="#" class="deploy-sidebar"></a>
-            <em>JQUERY </em>
+            <em>HOMEPAGE</em>
         </div>
          
         <div class="content">
@@ -185,128 +165,165 @@ input[type=text]:focus, textarea:focus {
                 <a href="#" class="content-twitter"></a>
                 <a href="#" class="content-facebook"></a>       
             </div>
-            
-            <div class="decoration"></div>
-			
-			<div class="container no-bottom">
-			
-			<!-- News Feed Item -->
-			
-				<p class="quote-item">
-					<div class="newsFeed" >
-				
-						<img src="images/general-nature/2s.jpg" alt="img" class="floatLeft" style="width: 46px;">
-						<b>Vuqar Suleymanov:</b>
-						<span>
-						This is just an awesome bubble! It's quite cute isn't it? This is just an awesome bubble! It's quite cute isn't it? This is just an awesome bubble! 
-						alignright alignright alignright alignright alignright alignright alignright alignright v alignright alignright alignright alignright alignright alignright alignright alignright alignright
-						This is just an awesome bubble! It's quite cute isn't it? This is just an awesome bubble! It's quite cute isn't it? This is just an awesome bubble! 
-						alignright alignright alignright alignright alignright alignright alignright alignright v alignright alignright alignright alignright alignright alignright alignright alignright alignright
-						This is just an awesome bubble! It's quite cute isn't it? This is just an awesome bubble! It's quite cute isn't it? This is just an awesome bubble! 
-						alignright alignright alignright alignright alignright alignright alignright alignright v alignright alignright alignright alignright alignright alignright alignright alignright alignright
-						</span>
-					<div class="decoration"></div>
-					<a href="#" class="button button-blue"><i class="fa fa-thumbs-o-up fa-lg">1</i></a>
-					<a href="#" class="button button-turqoise"><i class="fa fa-comments-o fa-lg">3</i></a>
-					<textarea></textarea>
-					
-					</div>
-                </p> 
-				
-            
-				<!-- End News Feed Item -->
-				
-				<!-- News Feed Item -->
-			
-				<p class="quote-item">
-					<div class="newsFeed" >
-				
-						<img src="images/general-nature/2s.jpg" alt="img" class="floatLeft" style="width: 46px;">
-						<b>Vuqar Suleymanov:</b>
-						<span>
-						This is just an awesome bubble! It's quite cute isn't it? This is just an awesome bubble! It's quite cute isn't it? This is just an awesome bubble! 
-						alignright alignright alignright alignright alignright alignright alignright alignright v alignright alignright alignright alignright alignright alignright alignright alignright alignright
-						This is just an awesome bubble! It's quite cute isn't it? This is just an awesome bubble! It's quite cute isn't it? This is just an awesome bubble! 
-						alignright alignright alignright alignright alignright alignright alignright alignright v alignright alignright alignright alignright alignright alignright alignright alignright alignright
-						This is just an awesome bubble! It's quite cute isn't it? This is just an awesome bubble! It's quite cute isn't it? This is just an awesome bubble! 
-						alignright alignright alignright alignright alignright alignright alignright alignright v alignright alignright alignright alignright alignright alignright alignright alignright alignright
-						</span>
-					<div class="decoration"></div>
-					<a href="#" class="button button-blue"><i class="fa fa-thumbs-o-up fa-lg">1</i></a>
-					<a href="#" class="button button-turqoise"><i class="fa fa-comments-o fa-lg">3</i></a>
-					<textarea></textarea>
-					
-					</div>
-                </p> 
-				
-            
-				<!-- End News Feed Item -->
-				
-				<!-- News Feed Item -->
-			
-				<p class="quote-item">
-					<div class="newsFeed" >
-				
-						<img src="images/general-nature/2s.jpg" alt="img" class="floatLeft" style="width: 46px;">
-						<b>Vuqar Suleymanov:</b>
-						<span>
-						This is just an awesome bubble! It's quite cute isn't it? This is just an awesome bubble! It's quite cute isn't it? This is just an awesome bubble! 
-						alignright alignright alignright alignright alignright alignright alignright alignright v alignright alignright alignright alignright alignright alignright alignright alignright alignright
-						This is just an awesome bubble! It's quite cute isn't it? This is just an awesome bubble! It's quite cute isn't it? This is just an awesome bubble! 
-						alignright alignright alignright alignright alignright alignright alignright alignright v alignright alignright alignright alignright alignright alignright alignright alignright alignright
-						This is just an awesome bubble! It's quite cute isn't it? This is just an awesome bubble! It's quite cute isn't it? This is just an awesome bubble! 
-						alignright alignright alignright alignright alignright alignright alignright alignright v alignright alignright alignright alignright alignright alignright alignright alignright alignright
-						</span>
-					<div class="decoration"></div>
-					<a href="#" class="button button-blue"><i class="fa fa-thumbs-o-up fa-lg">1</i></a>
-					<a href="#" class="button button-turqoise"><i class="fa fa-comments-o fa-lg">3</i></a>
-					<textarea></textarea>
-					
-					</div>
-                </p> 
-				
-            
-				<!-- End News Feed Item -->
-				
-				<!-- News Feed Item -->
-			
-				<p class="quote-item">
-					<div class="newsFeed" >
-				
-						<img src="images/general-nature/2s.jpg" alt="img" class="floatLeft" style="width: 46px;">
-						<b>Vuqar Suleymanov:</b>
-						<span>
-						This is just an awesome bubble! It's quite cute isn't it? This is just an awesome bubble! It's quite cute isn't it? This is just an awesome bubble! 
-						alignright alignright alignright alignright alignright alignright alignright alignright v alignright alignright alignright alignright alignright alignright alignright alignright alignright
-						This is just an awesome bubble! It's quite cute isn't it? This is just an awesome bubble! It's quite cute isn't it? This is just an awesome bubble! 
-						alignright alignright alignright alignright alignright alignright alignright alignright v alignright alignright alignright alignright alignright alignright alignright alignright alignright
-						This is just an awesome bubble! It's quite cute isn't it? This is just an awesome bubble! It's quite cute isn't it? This is just an awesome bubble! 
-						alignright alignright alignright alignright alignright alignright alignright alignright v alignright alignright alignright alignright alignright alignright alignright alignright alignright
-						</span>
-					<div class="decoration"></div>
-					<a href="#" class="button button-blue"><i class="fa fa-thumbs-o-up fa-lg">1</i></a>
-					<a href="#" class="button button-turqoise"><i class="fa fa-comments-o fa-lg">3</i></a>
-					<textarea></textarea>
-					
-					</div>
-                </p> 
-				
-            
-				<!-- End News Feed Item -->
-				
-				
-				
-				
-				
-                     
-              
+
+            <div class="container">
+                <div class="slider-controls" data-snap-ignore="true">                
+                    <div>
+                        <img src="images/general-nature/3.jpg" class="responsive-image" alt="img">
+                        <p class="title-slider-caption">
+                            <strong>Welcome</strong>
+                            <em>We make your mobile and tablet rock!</em>
+                        </p>
+                    </div>
                 
-               
+                    <div>
+                        <img src="images/general-nature/2.jpg" class="responsive-image" alt="img">
+                        <p class="small-slider-caption">A small caption</p>
+                    </div>
+
+                    <div>
+                        <img src="images/general-nature/1.jpg" class="responsive-image" alt="img">
+                        <p class="title-slider-caption">
+                            <strong>A caption title</strong>
+                            <em>A caption text and what not!</em>
+                        </p>
+                    </div>
+                </div>
+                <a href="#" class="next-slider"></a>
+                <a href="#" class="prev-slider"></a>
+            </div>
+            <div class="decoration"></div>
+            <div class="container no-bottom">
+            	<h4>Welcome</h4>
+                <p>Sitebar is a multi-purpose creative page with a unique sidebar navigation to pump out the awesome sauce on your mobile device!</p>
             </div>
 
-         	<div class="decoration"></div>
+			<div class="decoration"></div>
+            
+            <div class="container no-bottom">
+            	<h4>Services we provide</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisc ing elit. In adipiscing sem vel lorem elementum.</p>
+            </div>
+            
+    		<div class="container">
+                <a href="#" class="next-quote"></a>
+                <a href="#" class="prev-quote"></a>
+                <div class="quote-slider" data-snap-ignore="true">
+                    <div>
+                        <div class="services-item">
+                        	<h4>Elite Author</h4>
+                        	<div class="overlay dark-overlay"></div>
+                            <img src="images/general-nature/3s.jpg" alt="img">
+                            <strong>We love quotes, and sometimes it's annoying to see tons of them that you need to scroll to!</strong>
+                       		<a href="#" class="button button-dark center-button">Button One</a>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="services-item">
+                        	<h4>Mobile Web</h4>
+                        	<div class="overlay red-overlay"></div>
+                            <img src="images/general-nature/3s.jpg" alt="img">
+                            <strong>We love quotes, and sometimes it's annoying to see tons of them that you need to scroll to!</strong>
+                       		<a href="#" class="button button-red center-button">Button One</a>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="services-item">
+                        	<h4>Mobile Web</h4>
+                        	<div class="overlay blue-overlay"></div>
+                            <img src="images/general-nature/4s.jpg" alt="img">
+                            <strong>We love quotes, and sometimes it's annoying to see tons of them that you need to scroll to!</strong>
+                        	<a href="#" class="button button-blue center-button">Button Two</a>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="services-item">
+                        	<h4>CSS3 Code</h4>
+                        	<div class="overlay yellow-overlay"></div>
+                            <img src="images/general-nature/5s.jpg" alt="img">
+                            <strong>We love quotes, and sometimes it's annoying to see tons of them that you need to scroll to!</strong>
+                        	<a href="#" class="button button-yellow center-button">Button Three</a>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="services-item">
+                        	<h4>PSD Included</h4>
+                        	<div class="overlay green-overlay"></div>
+                            <img src="images/general-nature/6s.jpg" alt="img">
+                            <strong>We love quotes, and sometimes it's annoying to see tons of them that you need to scroll to!</strong>
+                        	<a href="#" class="button button-green center-button">Button Four</a>
+                        </div>
+                    </div>
+                </div>
+            </div>      		
+			<div class="decoration"></div>
+            
+            <div class="container no-bottom">
+            	<div class="one-half-responsive">
+                	<p class="quote-item">
+                    	<img src="images/general-nature/6s.jpg" alt="img">
+                        <strong>Light weight</strong>
+                        Great product and awesome help to get for this! Many thanks mate!
+                    </p>
+                </div>
+                <div class="one-half-responsive last-column">
+                	<p class="quote-item">
+                    	<img src="images/general-nature/2s.jpg" alt="img">
+                    	<strong>Ellegant design</strong>
+                        Fast support, awesome file, good  docs, this rocks! Thank you for all!
+                    </p>                
+                </div>
+            	<div class="one-half-responsive">
+                	<p class="quote-item">
+                    	<img src="images/general-nature/3s.jpg" alt="img">
+                        <strong>Coded for power</strong>
+                        Thanks for the awesome item, just what I was searching for all along!
+                    </p>
+                </div>
+                <div class="one-half-responsive last-column">
+                	<p class="quote-item">
+                    	<img src="images/general-nature/4s.jpg" alt="img">
+                        <strong>Documented for all</strong>
+                        Fast loading, great support, easy to use, all I asked for!
+                    </p>                
+                </div>
+            </div>           
+            <div class="decoration"></div>  
 
-                    
+            <div class="container no-bottom">
+            	<h4>Show off your works!</h4>
+                <p>In an awesome thumbnail gallery that's made to shine and works flawlessly with swipe ability too!</p>
+            </div>
+            <div class="container no-bottom">
+                <ul class="gallery round-thumb">
+                    <li>
+                        <a class="swipebox" href="images/gallery/full/1.jpg" title="An image caption!">
+                        <img src="images/general-nature/1s.jpg" alt="img" /></a>
+                    </li>
+                    <li>
+                        <a class="swipebox" href="images/gallery/full/2.jpg" title="It can change!">
+                        <img src="images/general-nature/2s.jpg" alt="img" /></a>
+                    </li>
+                    <li>
+                        <a class="swipebox" href="images/gallery/full/3.jpg" title="To be whatever you want!">
+                        <img src="images/general-nature/3s.jpg" alt="img" /></a>
+                    </li>
+                    <li>
+                        <a class="swipebox" href="images/gallery/full/1.jpg" title="It's connected to the href!">
+                        <img src="images/general-nature/4s.jpg" alt="img" /></a>
+                    </li>
+                    <li>
+                        <a class="swipebox" href="images/gallery/full/2.jpg" title="Easy to change and edit!">
+                        <img src="images/general-nature/5s.jpg" alt="img" /></a>
+                    </li>
+                    <li>
+                        <a class="swipebox" href="images/gallery/full/3.jpg" title="What an awesome gallery!">
+                        <img src="images/general-nature/6s.jpg" alt="img" /></a>
+                    </li>
+                </ul>   
+            </div>
+            <div class="decoration"></div>
+            
         	<div class="container">
                 <div class="footer-socials">
                     <a href="#" class="facebook-footer"></a>
