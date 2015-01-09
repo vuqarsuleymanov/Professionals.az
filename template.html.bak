@@ -47,25 +47,7 @@
       success: function(response) {
       	var userData = response;
       	$.each(userData,function(index,element){
-      		$('#newsFeedDiv').append('<p class='quote-item'>
-					<div class='newsFeed' >
-				<a href='#'><i style='float: right' class='fa fa-times fa-lg'></i></a>
-						<img src='"+element.photoPath + '/'+element.photoName+"' alt='img' class='floatLeft' style='width: 46px;'>
-						
-						<b>"+element.name+":</b>
-						
-						<span style='width: 90%'>
-						"+element.description+"
-						</span>
-						
-					<div class='decoration'></div>
-					<a href='#' class='button button-blue'><i class='fa fa-thumbs-o-up fa-lg'>'+element.likeCount+'</i></a>
-					<a href='#' class='button button-turqoise'><i class='fa fa-comments-o fa-lg'>'+element.shareCount+'</i></a>
-					<span style='float: right'>"+element.dateCreated+"</span>
-					<textarea ></textarea><a style='float: right' href='#' class='button button-green'>Şərh yaz</a>
-					
-					</div>
-        </p>')
+      		$('#newsFeedDiv').append("salam");
       			
       		
       		});
