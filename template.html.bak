@@ -45,15 +45,22 @@
 			url: 'http://localhost:8080/professionalsWebServices/newsFeed.json',
 			type: 'POST',
       success: function(response) {
-      	var userData = response;
+      	var userData = response.newsFeed;
       	$.each(userData,function(index,element){
-      		$('#newsFeedDiv').append("salam");
-      			
+      		var feed = element[0];
+      		var user = element[1];
+      		var personalInfo = element[2];
+      		if(localStorage.userId===user.id){
+      	      		$('#newsFeedDiv').append("<p class='quote-item'><div class='newsFeed' ><a href='#'><i style='float: right' class='fa fa-times fa-lg'></i></a><img src='"+user.photoPath + '/'+user.photoName+"' alt='img' class='floatLeft' style='width: 46px;'><b>"+personalInfo.surname+' '+personalInfo.name+": </b><span style='width: 90%'>"+feed.description+"</span><div class='decoration'></div><a href='#' class='button button-blue'><i class='fa fa-thumbs-o-up fa-lg'> "+feed.likeCount+"</i></a><a href='#' class='button button-turqoise'><i class='fa fa-comments-o fa-lg'> "+feed.shareCount+"</i></a><span style='float: right'>"+feed.dateCreated+"</span><textarea ></textarea><a style='float: right' href='#' class='button button-green'>Şərh yaz</a></div></p>");
+      			}else{
+	      			$('#newsFeedDiv').append("<p class='quote-item'><div class='newsFeed' ><img src='"+user.photoPath + '/'+user.photoName+"' alt='img' class='floatLeft' style='width: 46px;'><b>"+personalInfo.surname+' '+personalInfo.name+": </b><span style='width: 90%'>"+feed.description+"</span><div class='decoration'></div><a href='#' class='button button-blue'><i class='fa fa-thumbs-o-up fa-lg'> "+feed.likeCount+"</i></a><a href='#' class='button button-turqoise'><i class='fa fa-comments-o fa-lg'> "+feed.shareCount+"</i></a><span style='float: right'>"+feed.dateCreated+"</span><textarea ></textarea><a style='float: right' href='#' class='button button-green'>Şərh yaz</a></div></p>");
+      			}
       		
       		});
 			
 		},
 		error:function(response){
+		alert("error");
 			
 	}
 			
@@ -207,12 +214,8 @@ input[type=text]:focus, textarea:focus {
             <div class='decoration'></div>
 			
 			<div class='container no-bottom' id='newsFeedDiv'>
-			
 			<!-- News Feed Item -->
-			
-				
-		 
-     </div>
+			</div>
 
          	<div class='decoration'></div>
 
