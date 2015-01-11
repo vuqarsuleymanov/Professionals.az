@@ -155,6 +155,7 @@
              */
 
             $(document).ready(function() {
+            //window.localStorage.removeItem("userId");
 				
                 if (localStorage.getItem("userId") !== null)
                 {
@@ -335,7 +336,7 @@
                             var val = response.type;
                             
 							if(val){
-                            window.localStorage.setItem("userId", val);
+                            window.localStorage.setItem("userId", response.userId);
                             window.location.href = "home.html"
                             }
                         },
